@@ -36,6 +36,12 @@ protected:
 	unsigned int	m_wordwrap_pos_p;
 	unsigned int	m_wordwrap_pos_l;
 
+	TCHAR * m_buffer;
+	int		m_bufferLen;
+
+	TCHAR * GetBuffer();
+	BOOL	SetBuffer( const TCHAR * buff, int size );
+
 protected:
 	afx_msg LRESULT OnEnterMenuLoop(WPARAM wp, LPARAM lp);
 	afx_msg LRESULT OnExitMenuLoop(WPARAM wp, LPARAM lp);

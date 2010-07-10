@@ -29,10 +29,13 @@ CEditor::CEditor()
 	m_wordwrap_pos_p =0;
 	m_wordwrap_pos_l =0;
 
+	m_buffer = NULL;
+	m_bufferLen = -1;
 }
 
 CEditor::~CEditor()
 {
+	delete [] m_buffer;
 }
 
 
@@ -86,8 +89,8 @@ BOOL CEditor::Create(DWORD dwStyle, const RECT& rect, CWnd* pParentWnd, UINT nID
 	CWnd* pWnd = this;
 	BOOL ret = FALSE;
 	if ( ( dwStyle & ES_MULTILINE )!=0 ){
-		// マルチラインの時はnEdit
-		ret =  pWnd->Create(_T("nEdit"), NULL, dwStyle, rect, pParentWnd, nID);
+		// Use standard edit control instead of nEdit for X01SC
+		ret = CEdit::Create(dwStyle, rect, pParentWnd, nID);
 	}else{
 		// シングルラインの時は通常のエディットコントロール
 		ret = CEdit::Create(dwStyle, rect, pParentWnd, nID);
@@ -326,7 +329,7 @@ void	CEditor::JumpLineNo(int lineno)
 void	CEditor::FindString( CString str , bool down , bool first )
 {
 	// 全テキスト取得
-	const TCHAR	*text = (const TCHAR*)SendMessage( WM_GETLOCALMEM );
+	const TCHAR	*text = GetBuffer();
 
 	// 選択位置取得
 	int st,ed;
@@ -375,7 +378,7 @@ const TCHAR *	CEditor::GetFindInistr()
 {
 	CString	ret;
 	// 全テキスト取得
-	const TCHAR	*text = (const TCHAR*)SendMessage( WM_GETLOCALMEM );
+	const TCHAR	*text = GetBuffer();
 
 	// 選択位置取得
 	int st,ed;
@@ -392,7 +395,7 @@ const TCHAR *	CEditor::GetFindInistr()
 	m_inistr[len] = _T('\0');
 
 	// 改行があれば打ち切り
-	TCHAR *p = _tcschr( m_inistr , _T('\n') );
+	TCHAR *p = _tcschr( m_inistr , _T('\r') );
 	if ( p!=NULL ){
 		return _T("");
 	}
@@ -407,13 +410,12 @@ void	CEditor::SetWordwrap( BOOL wrap )
 
 BOOL CEditor::SetMemory( const TCHAR *buff , int size )
 {
-	return SendMessage( WM_SETMEM , size*sizeof(TCHAR) , (LPARAM)buff );
+	return SetBuffer( buff, size );
 }
 
 const TCHAR *CEditor::GetMemory(  )
 {
-
-	return (const TCHAR *)SendMessage( WM_GETLOCALMEM   );
+	return GetBuffer();
 }
 
 void	CEditor::SetDrawSymbol( DWORD flags ){
@@ -431,7 +433,7 @@ void CEditor::OnSetFocus(CWnd* pOldWnd)
 void	CEditor::Replace( CString str ,CString rep , bool down )
 {
 	// 全テキスト取得
-	const TCHAR	*text = (const TCHAR*)SendMessage( WM_GETLOCALMEM );
+	const TCHAR	*text = GetBuffer();
 
 	// 選択位置取得
 	int st,ed;
@@ -502,7 +504,7 @@ void	CEditor::ReplaceAll( CString str ,CString rep )
 		tmp0 = start = GetTickCount();
 
 		bool	cont = false;
-		while ( text = (const TCHAR*)SendMessage( WM_GETLOCALMEM ),
+		while ( text = GetBuffer(),
 			search->Search( true ,text,fst,fed ) ){
 
 			tmp = GetTickCount();
@@ -560,8 +562,7 @@ void	CEditor::SetColor( int code , DWORD color )
 CString	CEditor::GetSelectedStr()
 {
 	// 全テキスト取得
-	const TCHAR	*text = (const TCHAR*)SendMessage( WM_GETLOCALMEM );
-
+	const TCHAR	*text = GetBuffer();
 	// 選択位置取得
 	int st,ed;
 	GetSel(st,ed);
@@ -625,4 +626,37 @@ void CEditor::SetWordwrapPos( unsigned int portrait ,unsigned int landscape )
 	// ワードラップ位置の設定
 	SendMessage( WM_SETWORDWRAPPOS ,pos , 1 );
 
+}
+
+TCHAR * CEditor::GetBuffer()
+{
+	int length = GetWindowTextLength();
+
+	if (m_bufferLen < length) {
+		delete [] m_buffer;
+
+		m_bufferLen = length + 1024;
+		m_buffer = new TCHAR[m_bufferLen];
+	}
+
+	GetWindowText(m_buffer, m_bufferLen);
+
+	return m_buffer;
+}
+
+BOOL CEditor::SetBuffer( const TCHAR * buff, int size )
+{
+	if (m_bufferLen < size + 1) {
+		delete [] m_buffer;
+
+		m_bufferLen = size + 1024;
+		m_buffer = new TCHAR[m_bufferLen];
+	}
+
+	StringCbCopyN(m_buffer, m_bufferLen * sizeof(TCHAR), buff, size * sizeof(TCHAR));
+	m_buffer[size] = '\0';
+
+	SetWindowText(m_buffer);
+
+	return TRUE;
 }

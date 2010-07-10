@@ -244,8 +244,8 @@ bool CChildView::OpenFile(const TCHAR *filename ,bool arg )
 					rbuf.AddBuff( str );
 					if ( dec.state() != 0 ){
 						//text += _T("\r\n");
-//						rbuf.AddBuff( _T("\r\n") );
-						rbuf.AddBuff( _T("\r") );
+						rbuf.AddBuff( _T("\r\n") );
+						//rbuf.AddBuff( _T("\r") );
 					}
 					if ( rbuf.IsError() ){
 						throw;
@@ -341,7 +341,7 @@ void	CChildView::Savefile( const TCHAR *filename )
 				if ( epos < strlen ){
 					enc.writeLine( buff+pos , epos - pos ,firstline );
 					firstline = false;
-					pos = epos +1;									// 次の検索位置に進める
+					pos = epos +2;									// 次の検索位置に進める (skip \r\n)
 				}else{
 					// 最終行の処理
 					enc.writeLine( buff+pos ,strlen - pos ,false ,true );
