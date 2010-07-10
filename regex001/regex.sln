@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "regex", "regex.vcproj", "{0B3FF440-D6EF-4FC1-899B-69F596BEE892}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0B3FF440-D6EF-4FC1-899B-69F596BEE892}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0B3FF440-D6EF-4FC1-899B-69F596BEE892}.Debug|Win32.Build.0 = Debug|Win32
+		{0B3FF440-D6EF-4FC1-899B-69F596BEE892}.Release|Win32.ActiveCfg = Release|Win32
+		{0B3FF440-D6EF-4FC1-899B-69F596BEE892}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

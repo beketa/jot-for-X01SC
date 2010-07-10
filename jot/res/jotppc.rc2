@@ -1,0 +1,34 @@
+//
+// jotPPC.RC2 - Microsoft Visual C++ で直接編集しないリソース
+//
+
+#ifdef APSTUDIO_INVOKED
+#error このファイルは、Microsoft Visual C++ で編集できません
+#endif //APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+// 手動で編集されたりソースをここに追加します...
+
+/////////////////////////////////////////////////////////////////////////////
+HI_RES_AWARE CEUX {1}    // エミュレーション層をオフにします
+            // pixel-doubling をサポートするプラットフォームで
+            // 有効にするために、このリソースを削除します
+/////////////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// SHMENUBAR
+//
+//
+IDR_MAINFRAME SHMENUBAR DISCARDABLE
+BEGIN
+    IDR_MAINFRAME, 
+    2,
+    
+    I_IMAGENONE, ID_FILE_NEW, TBSTATE_ENABLED, TBSTYLE_DROPDOWN | TBSTYLE_AUTOSIZE,
+    IDS_FILE, 0, 0,
+
+    I_IMAGENONE, IDM_MENU, TBSTATE_ENABLED, TBSTYLE_DROPDOWN | TBSTYLE_AUTOSIZE,
+    IDS_MENU, 0, 1,
+END

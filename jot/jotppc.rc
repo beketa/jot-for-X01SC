@@ -1,0 +1,582 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resourceppc.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 日本語 resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)
+#ifdef _WIN32
+LANGUAGE LANG_JAPANESE, SUBLANG_DEFAULT
+#pragma code_page(932)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resourceppc.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)\r\n"
+    "LANGUAGE 17, 1\r\n"
+    "#pragma code_page(932)\r\n"
+    "#include ""res\\jotppc.rc2""  // Microsoft Visual C++ 以外で編集されたリソース\r\n"
+    "#include ""afxres.rc""     // 標準コンポーネント\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\jot.ico"
+IDI_FILE                ICON                    "res\\file.ico"
+IDI_TXTFILE             ICON                    "res\\txtfile.ico"
+IDI_INIFILE             ICON                    "res\\inifile.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS 
+BEGIN
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+    "Q",            ID_EXIT,                VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_FILE_NEW_,           VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    "B",            ID_FIND_UP,             VIRTKEY, CONTROL, NOINVERT
+    "G",            ID_JUMP_LINENO,         VIRTKEY, CONTROL, NOINVERT
+    "F",            ID_SEARCH_SEARCH,       VIRTKEY, CONTROL, NOINVERT
+    "A",            ID_SELECTALL,           VIRTKEY, CONTROL, NOINVERT
+    "R",            ID_SEARCH_REPLACE,      VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 219
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 134
+    END
+
+    IDD_SETTING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 226
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 456
+    END
+
+    IDD_SEARCHSETTING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 168
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 120
+    END
+
+    IDD_COMP_SETTING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 198
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 294
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_SUMENU MENU 
+BEGIN
+    MENUITEM "UnLock Shift",                ID_SHIFTUNLOCK
+    MENUITEM "UnLock Shift",                ID_SHIFTUNLOCK
+END
+
+IDR_MAINFRAME MENU 
+BEGIN
+    POPUP "File"
+    BEGIN
+        MENUITEM "Open",                        ID_FILE_OPEN
+        MENUITEM "New",                         ID_FILE_NEW_
+        MENUITEM "_Reopen",                     ID_FILE_REOPEN
+        POPUP "Recent"
+        BEGIN
+            MENUITEM "(None)",                      ID_DUMMY
+        END
+        MENUITEM "Save As",                     ID_FILE_SAVEAS
+        MENUITEM "Save",                        ID_FILE_SAVE
+        MENUITEM SEPARATOR
+        POPUP "Encoding"
+        BEGIN
+            MENUITEM "Auto",                        ID_CHARSET_AUTODETECT
+            MENUITEM SEPARATOR
+            MENUITEM "ShiftJIS",                    ID_CHARSET_SHIFTJIS
+            MENUITEM "JIS",                         ID_CHARSET_JIS
+            MENUITEM "EUC",                         ID_CHARSET_EUC
+            MENUITEM "UTF-8",                       ID_CHARSET_UTF8
+            MENUITEM "UTF-16",                      ID_CHARSET_UTF16
+            MENUITEM "Latin",                       ID_CHARSET_LATIN
+        END
+        POPUP "Linebreak"
+        BEGIN
+            MENUITEM "CR",                          ID_LB_CR
+            MENUITEM "CRLF",                        ID_LB_CRLF
+            MENUITEM "LF",                          ID_LB_LF
+        END
+        POPUP "Properties"
+        BEGIN
+            MENUITEM "AutoSave",                    ID_PROP_AUTOSAVE
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "Exit",                        ID_EXIT
+    END
+    POPUP "Menu"
+    BEGIN
+        MENUITEM "ShiftLock",                   ID_SHIFT_LOCK
+        MENUITEM SEPARATOR
+        POPUP "Edit"
+        BEGIN
+            MENUITEM "Copy",                        ID_EDIT_COPY
+            MENUITEM "Cut",                         ID_EDIT_CUT
+            MENUITEM "Paste",                       ID_EDIT_PASTE
+            MENUITEM SEPARATOR
+            MENUITEM "Undo",                        ID_EDIT_UNDO
+            MENUITEM SEPARATOR
+            MENUITEM "Select All",                  ID_SELECTALL
+        END
+        POPUP "Go To"
+        BEGIN
+            MENUITEM "Line Nr.",                    ID_JUMP_LINENO
+            MENUITEM SEPARATOR
+            MENUITEM "First Line",                  ID_JUMP_HOME
+            MENUITEM "Previous Page",               ID_JUMP_PREV
+            MENUITEM "Next Page",                   ID_JUMP_NEXT
+            MENUITEM "Last Line",                   ID_JUMP_END
+        END
+        POPUP "Find"
+        BEGIN
+            MENUITEM "Find...",                     ID_SEARCH_SEARCH
+            MENUITEM "Replace...",                  ID_SEARCH_REPLACE
+            MENUITEM SEPARATOR
+            MENUITEM "Search Option",               ID_TOOL_SEARCHOPTION
+        END
+        POPUP "View"
+        BEGIN
+            MENUITEM "Font +",                      ID_VIEW_FONTUP
+            MENUITEM "Font -",                      ID_VIEW_FONTDOWN
+            MENUITEM "Word Wrap",                   ID_VIEW_WORDWRAP
+            MENUITEM "Refresh",                     ID_VIEW_RELOCATE
+        END
+        MENUITEM "_Placefolder",                ID_TEMPLATE
+        POPUP "Insert"
+        BEGIN
+            MENUITEM "dummy",                       ID_DUMMY
+        END
+        POPUP "Tools"
+        BEGIN
+            MENUITEM "Option...",                   ID_TOOL_OPTION
+            MENUITEM "Compatibility...",            ID_TOOL_COMPATIBILITY
+            MENUITEM "Association...",              ID_TOOL_ASSOC
+            MENUITEM SEPARATOR
+            MENUITEM "About...",                    ID_APP_ABOUT
+        END
+    END
+END
+
+IDR_CONTEXTMENU MENU 
+BEGIN
+    POPUP "Edit"
+    BEGIN
+        MENUITEM "Copy",                        ID_EDIT_COPY
+        MENUITEM "Cut",                         ID_EDIT_CUT
+        MENUITEM "Paste",                       ID_EDIT_PASTE
+        MENUITEM SEPARATOR
+        MENUITEM "Undo",                        ID_EDIT_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "Select All",                  ID_SELECTALL
+    END
+END
+
+IDR_OK MENU 
+BEGIN
+    MENUITEM "OK",                          IDOK
+END
+
+IDR_OKCANCEL MENU 
+BEGIN
+    MENUITEM "OK",                          IDOK
+    MENUITEM "Cancel",                      IDCANCEL
+END
+
+IDR_JUMPLINENO MENU 
+BEGIN
+    MENUITEM "Go To",                       ID_JUMP
+    MENUITEM "Cancel",                      ID_BOTTOMBAR_CANCEL
+END
+
+IDR_FIND MENU 
+BEGIN
+    MENUITEM "Find",                        ID_FIND
+    POPUP "Menu"
+    BEGIN
+        MENUITEM "Find Up",                     ID_FIND_UP
+        MENUITEM SEPARATOR
+        MENUITEM "Cancel",                      ID_BOTTOMBAR_CANCEL
+    END
+END
+
+IDR_REPLACE MENU 
+BEGIN
+    MENUITEM "Replace",                     ID_REPLACE
+    POPUP "Menu"
+    BEGIN
+        MENUITEM "Find Up",                     ID_REPLACE_UP
+        MENUITEM "Find Down",                   ID_REPLACE_DOWN
+        MENUITEM SEPARATOR
+        MENUITEM "Replace All",                 ID_REPLACE_ALL
+        MENUITEM SEPARATOR
+        MENUITEM "Cancel",                      ID_BOTTOMBAR_CANCEL
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 0,1,0,0
+ PRODUCTVERSION 0,1,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041103a4"
+        BEGIN
+            VALUE "CompanyName", "Aquamarine Networks."
+            VALUE "FileVersion", "0.1.0"
+            VALUE "InternalName", "jot.exe"
+            VALUE "LegalCopyright", "(C) 2007, Aquamarine Networks.  All rights reserved."
+            VALUE "OriginalFilename", "jot.exe"
+            VALUE "ProductName", "jot"
+            VALUE "ProductVersion", "0.1.0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x411, 932
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG  0, 0, 226, 141
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_CAPTION
+EXSTYLE 0x80000000L
+CAPTION "About jot"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC_1,12,12,20,20,SS_REALSIZEIMAGE
+    LTEXT           "jot Version 1.0",IDC_VERSION,12,36,70,20,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2007-2010 Aquamarine Networks.",IDC_STATIC_3,12,61,102,21
+    LTEXT           "http://pandora.sblo.jp/",IDC_STATIC,12,95,116,8
+END
+
+IDD_SETTING DIALOG  0, 0, 244, 463
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_VSCROLL | WS_SYSMENU
+CAPTION "Settings"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    LTEXT           "Font:",IDC_STATIC,7,8,219,8
+    COMBOBOX        IDC_COMBO_FONT,7,18,80,71,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Size:",IDC_STATIC,7,34,219,8
+    COMBOBOX        IDC_COMBO_FONTSIZE,7,44,48,65,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Bold",IDC_CHECK_BOLD,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,60,143,12
+    CONTROL         "Display Linebreak",IDC_CHECK_DRAWLINEBREAK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,72,143,12
+    CONTROL         "Display Tab",IDC_CHECK_DRAWTAB,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,84,143,12
+    CONTROL         "Display Space",IDC_CHECK_DRAWSPACE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,96,143,12
+    CONTROL         "Display Wide Space",IDC_CHECK_DRAWWIDESPACE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,108,143,12
+    CONTROL         "Display Underline",IDC_CHECK_UNDERLINE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,120,143,12
+    CONTROL         "Display Line Numbers",IDC_CHECK_DRAWLINENUMBER,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,132,143,12
+    CONTROL         "Disable Word Wrap",IDC_CHECK_HSCROLL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,144,143,12
+    LTEXT           "Text Margin(Portrait):",IDC_STATIC,7,158,199,8
+    EDITTEXT        IDC_EDIT_WORDWRAP_POS_P,7,170,40,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "(0=right edge of screen)",IDC_STATIC,53,173,120,8
+    LTEXT           "Text Margin(Landscape):",IDC_STATIC,7,190,184,8
+    EDITTEXT        IDC_EDIT_WORDWRAP_POS_L,7,202,40,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "(0=right edge of screen)",IDC_STATIC,53,205,109,8
+    LTEXT           "Tab size:",IDC_STATIC,7,222,186,8
+    EDITTEXT        IDC_EDIT_TABSIZE,7,232,40,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "(Numbers of Space char)",IDC_STATIC,53,235,167,8
+    LTEXT           "Space between lines:",IDC_STATIC,7,252,115,8
+    EDITTEXT        IDC_EDIT_SPACING,7,262,40,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Recent Files:",IDC_STATIC,7,280,154,8
+    EDITTEXT        IDC_EDIT_MRUNUM,7,290,40,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "(1-9)",IDC_STATIC,57,292,98,8
+    CONTROL         "Disable ""Encode:Auto"" when encoding is changed",IDC_CHECK_DISAUTODETECT,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,306,192,12
+    LTEXT           "Default Encode for new files:",IDC_STATIC_NEWFILECHARCODE,7,320,189,8
+    COMBOBOX        IDC_COMBO_NEFILECHARCODE,7,331,80,71,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Default Linebreak for new files:",IDC_STATIC_NEWFILELINEBREAK,7,348,196,8
+    COMBOBOX        IDC_COMBO_NEWFILELINEBREAK,7,359,80,71,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Don't show title bar (need restart)",IDC_CHECK_FULLSC,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,377,219,12
+    CONTROL         "Assign number key for acceralator in portrait mode",IDC_CHECK_MENUTENKEY,
+                    "Button",BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,7,389,219,12
+    LTEXT           "Volume key settings:",IDC_STATIC_XSCRAWL,7,401,219,8,NOT WS_VISIBLE
+    COMBOBOX        IDC_COMBO_XSCRAWL,7,412,80,84,CBS_DROPDOWNLIST | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_SEARCHSETTING DIALOG  0, 0, 186, 127
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_VSCROLL | WS_SYSMENU
+CAPTION "Search Option"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    CONTROL         "Regular Expression",IDC_CHECK_REGEX,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,7,143,12
+    CONTROL         "Ignore Case",IDC_CHECK_IGNORECASE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,19,143,12
+END
+
+IDD_COMP_SETTING DIALOG  0, 0, 216, 301
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_VSCROLL | WS_SYSMENU
+CAPTION "Compatibility"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    CONTROL         "Disable IME Controling when focus swithed",IDC_CHECK_NOTFOCUSIME,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,8,191,12
+    CONTROL         "VK_BACK processed in WM_CHAR handler",IDC_CHECK_BSWMCHAR,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,20,191,12
+    CONTROL         "Assign 'BACK key' as BackSpace key",IDC_CHECK_BACKASBS,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,32,191,12
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_SETTING DLGINIT
+BEGIN
+    IDC_COMBO_FONTSIZE, 0x403, 2, 0
+0x0034, 
+    IDC_COMBO_FONTSIZE, 0x403, 2, 0
+0x0035, 
+    IDC_COMBO_FONTSIZE, 0x403, 2, 0
+0x0036, 
+    IDC_COMBO_FONTSIZE, 0x403, 2, 0
+0x0037, 
+    IDC_COMBO_FONTSIZE, 0x403, 2, 0
+0x0038, 
+    IDC_COMBO_FONTSIZE, 0x403, 2, 0
+0x0039, 
+    IDC_COMBO_FONTSIZE, 0x403, 3, 0
+0x3031, "\000" 
+    IDC_COMBO_FONTSIZE, 0x403, 3, 0
+0x3231, "\000" 
+    IDC_COMBO_FONTSIZE, 0x403, 3, 0
+0x3431, "\000" 
+    IDC_COMBO_FONTSIZE, 0x403, 3, 0
+0x3631, "\000" 
+    IDC_COMBO_FONTSIZE, 0x403, 3, 0
+0x3831, "\000" 
+    IDC_COMBO_FONTSIZE, 0x403, 3, 0
+0x3232, "\000" 
+    IDC_COMBO_FONTSIZE, 0x403, 3, 0
+0x3633, "\000" 
+    IDC_COMBO_FONTSIZE, 0x403, 3, 0
+0x3834, "\000" 
+    IDC_COMBO_FONTSIZE, 0x403, 3, 0
+0x3639, "\000" 
+    IDC_COMBO_NEFILECHARCODE, 0x403, 9, 0
+0x6853, 0x6669, 0x4a74, 0x5349, "\000" 
+    IDC_COMBO_NEFILECHARCODE, 0x403, 4, 0
+0x494a, 0x0053, 
+    IDC_COMBO_NEFILECHARCODE, 0x403, 4, 0
+0x5545, 0x0043, 
+    IDC_COMBO_NEFILECHARCODE, 0x403, 6, 0
+0x5455, 0x2d46, 0x0038, 
+    IDC_COMBO_NEFILECHARCODE, 0x403, 7, 0
+0x5455, 0x2d46, 0x3631, "\000" 
+    IDC_COMBO_NEFILECHARCODE, 0x403, 6, 0
+0x614c, 0x6974, 0x006e, 
+    IDC_COMBO_NEWFILELINEBREAK, 0x403, 3, 0
+0x5243, "\000" 
+    IDC_COMBO_NEWFILELINEBREAK, 0x403, 5, 0
+0x5243, 0x464c, "\000" 
+    IDC_COMBO_NEWFILELINEBREAK, 0x403, 3, 0
+0x464c, "\000" 
+    IDC_COMBO_XSCRAWL, 0x403, 5, 0
+0x6f4e, 0x656e, "\000" 
+    IDC_COMBO_XSCRAWL, 0x403, 7, 0
+0x2031, 0x696c, 0x656e, "\000" 
+    IDC_COMBO_XSCRAWL, 0x403, 8, 0
+0x2035, 0x696c, 0x656e, 0x0073, 
+    IDC_COMBO_XSCRAWL, 0x403, 9, 0
+0x3031, 0x6c20, 0x6e69, 0x7365, "\000" 
+    IDC_COMBO_XSCRAWL, 0x403, 9, 0
+0x3531, 0x6c20, 0x6e69, 0x7365, "\000" 
+    IDC_COMBO_XSCRAWL, 0x403, 9, 0
+0x3032, 0x6c20, 0x6e69, 0x7365, "\000" 
+    IDC_COMBO_XSCRAWL, 0x403, 5, 0
+0x6150, 0x6567, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_QUES_SAVEFILE       "File is modified.Save?"
+    IDS_CONF_SAVE           "Save Confirm"
+    IDS_CLOSEFILE           "Close this file?"
+    IDS_CONFIRM             "Confirm"
+    IDS_FILTER_PPC          "Text File(*.txt)|*.txt|ini File(*.ini)|*.ini|All Files(*.*)|*.*||"
+    IDS_FILTER_SP           "All Files(*.*)|*.*||"
+    IDS_JUMPLINENO          "Line Number: "
+    IDS_FIND                "Find: "
+    IDS_REPLACE             "Repl: "
+    IDS_OUT_OF_MEMORY       "Out of memory.\r\n"
+    IDS_ALREADY_EDITING     "The file is currently edited."
+    IDS_REPORT_REPLACE      "%d total mades."
+    IDS_CONFIRM_REPLACE     "Need time to process.\nContinue?"
+    IDS_CONFIRM_SETASSOC    "Do you want to associate *.txt/*.ini with jot?"
+    IDS_CONFIRM_DELASSOC    "Do you want to remove the association *.txt/*.ini with jot?"
+    IDS_CODEPAGE            "0409"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_MAX_WARN            "Exceeded the maximum number of characters. Excess text will be removed."
+    IDS_WARNING             "Warning"
+    IDS_CANTOPEN_ERR        "Can't open the file.\r\n"
+    IDS_ERROR               "Error"
+    IDS_FILEFILTER          "Text File(*.txt)"
+    IDS_FONT_NONE           "Not Set"
+    IDS_OPENFILE            "Open..."
+    IDS_SAVEFILE            "Save As..."
+END
+
+STRINGTABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_OK                  "OK"
+END
+
+STRINGTABLE 
+BEGIN
+    IDR_MAINFRAME           "jot"
+    IDS_EDITION_PPC         "PocketPC"
+    IDS_EDITION_SP          "Smartphone"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_FILE                "File"
+    IDS_MENU                "Menu"
+END
+
+#endif    // 日本語 resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)
+LANGUAGE 17, 1
+#pragma code_page(932)
+#include "res\jotppc.rc2"  // Microsoft Visual C++ 以外で編集されたリソース
+#include "afxres.rc"     // 標準コンポーネント
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
